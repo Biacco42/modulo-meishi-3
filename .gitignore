@@ -42,3 +42,5 @@ fp-info-cache
 # Local project settings
 *.kicad_prl
 
+# Local MCP server config (machine-specific path)
+.mcp.json
