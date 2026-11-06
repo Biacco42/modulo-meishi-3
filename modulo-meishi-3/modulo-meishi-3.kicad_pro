@@ -695,13 +695,18 @@
       {
         "filename": "modulo-meishi-3.kicad_sch",
         "name": "modulo-meishi-3",
-        "uuid": "00000000-0000-0000-0000-000000000000"
+        "uuid": "3927bcda-b2b1-475c-b633-105e41250373"
       }
     ],
     "used_designators": "",
     "variants": []
   },
-  "sheets": [],
+  "sheets": [
+    [
+      "3927bcda-b2b1-475c-b633-105e41250373",
+      "modulo-meishi-3"
+    ]
+  ],
   "text_variables": {},
   "tuning_profiles": {
     "meta": {
