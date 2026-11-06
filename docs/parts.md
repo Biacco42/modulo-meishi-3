@@ -1,6 +1,6 @@
 # meishi 3 部品表
 
-- 版: Draft 0.1（2026-11-06）
+- 版: Draft 0.2（2026-11-06）
 - 部品はすべて手ではんだ付けする。基板だけを発注し、部品は各自で用意する（PCBA は使わない）。
 - 在庫数と価格は 2026-11-06 時点の DigiKey の値（参考）。
 - 仕様の背景は [spec.md](spec.md) を参照。
@@ -11,13 +11,14 @@
 
 | 参照 | 数 | 型番 | メーカー | 仕様 | フットプリント | DigiKey PN | 在庫 | 単価 |
 |---|---|---|---|---|---|---|---|---|
-| U1 | 1 | modulo dev board Rev 0.3 | — | BLE 開発基板（MDBT53-1M、nRF5340）、40.64 × 17.78 mm、端面スルーホール | プロジェクトのライブラリに作る（ライブラリの PR） | — | — | — |
-| BT1 | 2 | 82 | Keystone Electronics | 電池クリップ（単4・N・A23 用）、スルーホール、スナップイン | 2 個 1 組でプロジェクトのライブラリに作る（ライブラリの PR） | 36-82-ND | 52,855 | $0.33 |
+| U1 | 1 | modulo dev board Rev 0.3 | — | BLE 開発基板（MDBT53-1M、nRF5340）、40.64 × 17.78 mm、端面スルーホール | `modulo-meishi-3:modulo-dev-board_Rev0.3` | — | — | — |
+| BT1 | 2 | 82 | Keystone Electronics | 電池クリップ（単4・N・A23 用）、スルーホール、スナップイン | `modulo-meishi-3:BatteryClip_Keystone_82_Pair_1xAAA`（2 個 1 組） | 36-82-ND | 52,855 | $0.33 |
 | SW1〜SW4 | 4 | Cherry MX 互換スイッチ（5 ピン） | 好みのもの | PCB マウント。プレートなしで基板に直接はんだ付けする | `Button_Switch_Keyboard:SW_Cherry_MX_1.00u_PCB` | — | — | — |
 | SW5 | 1 | OS102011MS2QN1 | C&K | スライドスイッチ SPDT、上面で操作、スルーホール、2.0 mm ピッチ | `Button_Switch_THT:SW_Slide_SPDT_Straight_CK_OS102011MS2Q` | CKN9565-ND | 39,902 | $0.80 |
 | H1〜H4 | 4 | — | — | 固定穴 Ø2.2 mm、メッキなし（基板の一部） | `MountingHole:MountingHole_2.2mm_M2` | — | — | — |
 
-- BT1 は 1 本の電池の両端に 1 個ずつ使うので 2 個。回路図では 1 つの部品（BT1）として扱う。
+- BT1 は 1 本の電池の両端に 1 個ずつ使うので 2 個。回路図では 1 つの部品（BT1）として扱い、シンボルは KiCad 標準の `Device:Battery_Cell`（ピン 1 が＋、ピン 2 が−）を使う。
+- U1 のシンボルは `modulo-meishi-3:modulo-dev-board_Rev0.3`。U1 と BT1 のライブラリは `modulo-meishi-3/lib/` にあり、プロジェクトに登録してある（仕様書 5.4 節、5.9 節）。
 - SW1〜SW4 のフットプリントは、5 ピンのスイッチの固定ピン用の穴（Ø1.7 mm）を含む。3 ピンのスイッチも載る。
 - U1 は、開発基板リポジトリで別に製造する。
 
